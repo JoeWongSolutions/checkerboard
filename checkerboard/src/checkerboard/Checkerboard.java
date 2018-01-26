@@ -21,16 +21,16 @@ import javafx.stage.Stage;
 public class Checkerboard extends Application {
     
     private AnchorPane board;
-    private int numRows;
-    private int numCols;
-    private double boardWidth;
-    private double boardHeight;
-    private double rectWidth;
-    private double rectHeight;
+    private final int numRows;
+    private final int numCols;
+    private final double boardWidth;
+    private final double boardHeight;
+    private final double rectWidth;
+    private final double rectHeight;
     
 //    private final Color[] colors = {Color.RED, Color.BLACK, Color.SKYBLUE, Color.DARKBLUE};
-    private Color lightColor;
-    private Color darkColor;
+    private final Color lightColor;
+    private final Color darkColor;
     
     public Checkerboard(){
         this(8,8,600.0,600.0);
@@ -89,6 +89,7 @@ public class Checkerboard extends Application {
                 AnchorPane.setTopAnchor(rect, rectHeight * row);
             }
         }
+        this.board = board;
         return board;
     }
     

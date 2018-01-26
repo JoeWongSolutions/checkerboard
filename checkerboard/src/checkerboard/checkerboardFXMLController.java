@@ -23,8 +23,8 @@ import javafx.stage.Stage;
  */
 public class checkerboardFXMLController implements Initializable {
     
-    Checkerboard checkerboard;
-    Stage stage;
+    private Checkerboard checkerboard;
+    private Stage stage;
     
     @FXML
     private VBox root;
