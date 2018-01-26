@@ -63,8 +63,7 @@ public class Checkerboard extends Application {
         stage.setScene(scene);
         stage.show();
         System.out.println("About to start");
-        boardController.start(stage);
-        
+        boardController.start(stage);    
     }
 
     /**
@@ -76,11 +75,10 @@ public class Checkerboard extends Application {
     
     /**
      * Dynamically add rectangles to an existing AnchorPane
-     * This is not recommended because resizing will require deletion of all
-     * rectangles which can take a while.
      * @param board
+     * @return AnchorPane
      */
-    public void build(AnchorPane board){
+    public AnchorPane build(AnchorPane board){
         for(int row = 0; row < numRows; row++){
             for(int col = 0; col < numCols; col++){
                 Color color = (row + col)%2 == 0? lightColor : darkColor;
@@ -91,6 +89,7 @@ public class Checkerboard extends Application {
                 AnchorPane.setTopAnchor(rect, rectHeight * row);
             }
         }
+        return board;
     }
     
     /**
@@ -137,6 +136,14 @@ public class Checkerboard extends Application {
     
     public double getRectangleHeight(){
         return rectHeight;
+    }
+    
+    public Color getLightColor(){
+        return lightColor;
+    }
+    
+    public Color getDarkColor(){
+        return darkColor;
     }
     
     public AnchorPane getBoard(){

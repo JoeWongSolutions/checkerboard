@@ -12,16 +12,16 @@
         <menus>
           <Menu mnemonicParsing="false" text="Grid">
             <items>
-              <MenuItem mnemonicParsing="false" text="16 X 16" />
-                  <MenuItem mnemonicParsing="false" text="10 X 10" />
-                  <MenuItem mnemonicParsing="false" text="8 X 8" />
-                  <MenuItem mnemonicParsing="false" text="3 X 3" />
+              <MenuItem mnemonicParsing="false" onAction="#changeToSixteen" text="16 X 16" />
+                  <MenuItem mnemonicParsing="false" onAction="#changeToTen" text="10 X 10" />
+                  <MenuItem mnemonicParsing="false" onAction="#changeToEight" text="8 X 8" />
+                  <MenuItem mnemonicParsing="false" onAction="#changeToThree" text="3 X 3" />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Colors">
             <items>
-              <MenuItem mnemonicParsing="false" text="Default" />
-                  <MenuItem mnemonicParsing="false" text="Blue" />
+              <MenuItem mnemonicParsing="false" onAction="#changeToRed" text="Default" />
+                  <MenuItem mnemonicParsing="false" onAction="#changeToBlue" text="Blue" />
             </items>
           </Menu>
         </menus>
