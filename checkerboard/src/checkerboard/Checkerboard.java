@@ -5,20 +5,15 @@
  */
 package checkerboard;
 
-import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
-import javafx.stage.Stage;
 
 /**
  *
  * @author joewong
  */
-public class Checkerboard extends Application {
+public class Checkerboard {
     
     private AnchorPane board;
     private final int numRows;
@@ -31,10 +26,6 @@ public class Checkerboard extends Application {
 //    private final Color[] colors = {Color.RED, Color.BLACK, Color.SKYBLUE, Color.DARKBLUE};
     private final Color lightColor;
     private final Color darkColor;
-    
-    public Checkerboard(){
-        this(8,8,600.0,600.0);
-    }
     
     public Checkerboard(int numRows, int numCols, double boardWidth, double boardHeight){
         this(numRows, numCols, boardWidth, boardHeight, Color.RED, Color.BLACK);
@@ -49,28 +40,6 @@ public class Checkerboard extends Application {
         this.darkColor = darkColor;
         this.rectWidth = Math.ceil(boardWidth / numCols);
         this.rectHeight = Math.ceil(boardHeight / numRows);
-    }
-    
-    @Override
-    public void start(Stage stage) throws Exception {
-        
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("checkerboardFXML.fxml"));
-        Parent root = (Parent)loader.load();
-        checkerboardFXMLController boardController = loader.getController();
-
-        Scene scene = new Scene(root);
-
-        stage.setScene(scene);
-        stage.show();
-        System.out.println("About to start");
-        boardController.start(stage);    
-    }
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        launch(args);
     }
     
     /**
